@@ -6,7 +6,7 @@ const port = 3000;
 app.set('trust proxy', true);
 
 app.get('/', (req, res) => {
-	res.send(req.socket.remoteAddress);
+	res.send(req.ip);
 });
 
 app.listen(port, () => {
