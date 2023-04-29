@@ -3,8 +3,10 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
+app.set('trust proxy', true);
+
 app.get('/', (req, res) => {
-	res.send(res.socket.remoteAddress);
+	res.send(req.socket.remoteAddress);
 });
 
 app.listen(port, () => {
