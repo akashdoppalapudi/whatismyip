@@ -6,7 +6,8 @@ const port = 3000;
 app.set('trust proxy', true);
 
 app.get('/', (req, res) => {
-	res.send(req.ip);
+	res.setHeader('Content-Type', 'text/plain');
+	res.status(200).send(`${req.ip}\n`);
 });
 
 app.listen(port, () => {
